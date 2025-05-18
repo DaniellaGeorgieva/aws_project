@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
+@import url('../../frontend/main_page/template-main.css');
+
+.logo-img {
+    height: 25vh;
+    width: 15vw;
+}
+
+/*style for adding an event form*/
+.add-event-card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.form-item-label {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+  
+.form-item-input {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.form-item-label label{
+    display: block;
+    margin-bottom: 5px;
+    color: #23013a;
+    font-size: 20px;
+}
+
+/* Additional Styles for Labels */
+label.required::after {
+    content: " *";
+    color: red;
+}
+
+label.fancy {
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: #007bff;
+}
+
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.form-item-input input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-item-button button{
+    width: 100%;
+    background-color:#4b0082;
+    color: white;
+    font-size: 20px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-item-button button:hover {
+    background-color: #965bc0;
+}
+
+.reg-not-success{
+    display: none;
+    color: red;
+}
+
+/* popup styling */
+.popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-box {
+    background-color: #fefefe;
+    margin: auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+#popup-close {
+    background-color: #4b0082;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20%;
+}
+
+#popup-close:hover {
+    background-color: #db87f7;
+}

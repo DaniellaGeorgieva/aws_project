@@ -1,0 +1,150 @@
+@import url('../../frontend/main_page/template-main.css');
+
+.logo-img {
+    height: 25vh;
+    width: 15vw;
+}
+
+.user-card {
+    gap: 10px;
+}
+
+.change-password {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.change-pass-btn button{
+    background-color:#4b0082;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    align-self: center;
+    padding: 10px;
+}
+
+.change-pass-btn button:hover {
+    background-color: #965bc0;
+}
+
+.msg-box {
+    display: none;
+}
+
+.container-right {
+    background-color: white;
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+
+
+
+/* .user-card input {
+    display:none;
+} */
+
+.change-info-form {
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+}
+
+.without-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.additional-grad {
+    display: none;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.additional-rec {
+    display: none;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+
+.form-item-button button{
+    background-color:#4b0082;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.form-item-button button:hover {
+    background-color: #965bc0;
+}
+
+.msg {
+    display: 'none';
+}
+
+/* popup styling */
+.popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-box {
+    background-color: #fefefe;
+    margin: auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+#popup-close {
+    background-color: #4b0082;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 20%;
+}
+
+#popup-close:hover {
+    background-color: #db87f7;
+}

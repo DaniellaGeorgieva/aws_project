@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="add_ad.js" defer></script>
+    <link rel="stylesheet" href="style_2.css">
+    <title>Ads</title>
+</head>
+<body>
+    <header class="container">
+        <img src="../../files/images/logo3_1.png" class="logo-img" alt="Logo">
+        <img src="../../files/images/cloud.png" class="cloud-img" alt="Clouds-background">
+        <div class="h-container">
+            <h1> Обяви </h1>
+        </div>
+    </header>
+    <nav class="navbar container">
+        <a href="../main_page/main.html">Начало</a>
+        <a href="../add_event/event_form.html">Добави събитие</a>
+        <a href="ads.html">Обяви</a>
+        <a href="../view_profile/view_profile.html">Преглед на профил</a>
+        <a href="../welcome_page/welcome.html">Изход</a>
+    </nav>
+    <div class="container">
+        <aside class="leftcolumn">
+            <div class="user-card">
+                <img src="../../files/images/default_pic.jpg" alt="User Default" id="profile-pic">
+                <h2 id="name">Name</h2>
+                <p id="user-info">Some text about user in culpa qui officia deserunt mollit anim..</p>
+            </div>
+        </aside>
+        <main class="rightcolumn">
+            <section class="add-ad-card">
+                <h2> Добави обява: </h2>
+                <form id="add-ad-form">
+                    <div class="row-form">
+                        <label for="name">Име на обявата: </label>
+                        <input id="name" type="text">
+                    </div>
+                    <div class="row-form">
+                        <label for="description">Описание на обявата: </label>
+                        <textarea id="description" name="description"></textarea>
+                    </div>
+                    <div class="form-item-button">
+                        <button>Добави обява</button>
+                    </div>
+                    <p id="add-not-success" class="add-not-success"></p>
+                </form>
+            </section>
+
+            <div id="popup-container" class="popup-container">
+                <div class="popup-box">
+                    <h2 id="popup-header">Modal Header</h2>
+                    <p id="popup-text">This is a simple modal pop-up box.</p>
+                    <button id="popup-close">ОК</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="container">
+        <h2> All rights reserved. Alumni Club @FMI since 2024.</h2>
+    </footer>
+</body>
+</html>

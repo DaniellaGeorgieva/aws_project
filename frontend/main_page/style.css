@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap');
+@import url('template-main.css');
+
+
+.event-card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.event-info {
+    padding-left: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+.event-img {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.event-img img {
+    width: 50%;
+} 
+
+.accepted-events {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.accepted-event {
+    border-bottom: 2px groove #4b0082;
+}
+
+.accept-event-button {
+    background-color:#4b0082;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    align-self: center;
+    padding: 10px;
+}

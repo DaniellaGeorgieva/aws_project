@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="add_event.js" defer></script>
+    <link rel='stylesheet' href="style.css">
+    <title>Add event</title>
+</head>
+<body>
+    <header class="container">
+        <img src="../../files/images/logo3_1.png" class="logo-img" alt="Logo">
+        <img src="../../files/images/cloud.png" class="cloud-img" alt="Clouds-background">
+        <div class="h-container">
+            <h1> Добави събитие</h1>
+        </div>
+    </header>
+    <nav class="navbar container">
+        <a href="../main_page/main.html">Начало</a>
+        <a href="event_form.html">Добави събитие</a>
+        <a href="../ads/ads.html">Обяви</a>
+        <a href="../view_profile/view_profile.html">Преглед на профил</a>
+        <a href="../welcome_page/welcome.html">Изход</a>
+    </nav>
+    <div class="container">
+        <aside class="leftcolumn">
+            <section class="user-card">
+                <section class="user-img">
+                    <img src="../../files/images/default_pic.jpg" alt="User Default" id="profile-pic">
+                </section>
+                <h2 id="name">Name</h2>
+                <section class="user-bio">
+                    <p id="user-info">Some text about user in culpa qui officia deserunt mollit anim..</p>
+                </section>
+            </section>
+        </aside>
+        <main class="rightcolumn">
+            <section class="add-event-card">
+                <form id="add-event-form">
+                    <div class="row-form">
+                        <div class="form-item-label">
+                            <label for="name">Име на събитието: </label>
+                        </div>
+                        <div class="form-item-input">
+                            <input id="name" type="text">
+                        </div>
+                    </div>
+                    <div class="row-form">
+                        <div class="form-item-label">
+                            <label for="description">Описание на събитието: </label>
+                        </div>
+                        <div class="form-item-input">
+                            <textarea id="description" name="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="row-form">
+                        <div class="form-item-label">
+                            <label for="date">Дата и час на събитието: </label>
+                        </div>
+                        <div class="form-item-input">
+                            <input type="datetime-local" id="date">
+                        </div>
+                    </div>
+                    <div class="row-form">
+                        <div class="form-item-label">
+                            <label for="image">Добави снимка: </label>
+                        </div>
+                        <div class="form-item-input">
+                            <input type="file" id="image" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="form-item-button">
+                        <button>Добави събитие</button>
+                    </div>
+                </form>
+            </section>
+            <p id="reg-not-success" class="reg-not-success"></p>
+
+            <div id="popup-container" class="popup-container">
+                <div class="popup-box">
+                    <h2 id="popup-header">Modal Header</h2>
+                    <p id="popup-text">This is a simple modal pop-up box.</p>
+                    <button id="popup-close">ОК</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="container">
+        <h2> All rights reserved. Alumni Club @FMI since 2024.</h2>
+    </footer>
+</body>
+</html>
