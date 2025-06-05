@@ -6,7 +6,7 @@ require_once('../db/db.php');
 function getUserInfo($conn) {
     // Fetch all users
     $sql = "SELECT users.UserId, users.FirstName, users.LastName, users.UserType, users.PhoneNumber, users.EmailAddress
-            FROM Users";
+            FROM users";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);

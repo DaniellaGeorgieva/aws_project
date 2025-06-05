@@ -19,7 +19,7 @@ imgForm.addEventListener('submit', (event) => {
     .then(response => response.json()) 
     .then(result => {
         console.log('Image uploaded successfully:', result);
-
+	userData['image'] = result['filepath'];       
         return fetch("../../backend/api/change_profile.php", {
             method: 'POST',
             headers: {

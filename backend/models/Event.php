@@ -40,7 +40,7 @@ class Event{
     }
 
     public function fetchUserId (PDO $conn, $email) {
-        $sql = "SELECT UserId FROM Users WHERE emailaddress = ?";
+        $sql = "SELECT UserId FROM users WHERE emailaddress = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email]);
 
@@ -48,7 +48,7 @@ class Event{
     }
 
     public function fetchEventId (PDO $conn, $name, $description) {
-        $sql = "SELECT EventId FROM EventInfo WHERE EventName = ? AND EventDesc= ?";
+        $sql = "SELECT EventId FROM eventinfo WHERE EventName = ? AND EventDesc= ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$name, $description]);
 

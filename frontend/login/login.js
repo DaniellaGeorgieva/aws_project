@@ -8,8 +8,11 @@ loginForm.addEventListener('submit', (event) => {
         userData[input.id] = input.value;
     });
 
-    fetch('../../backend/api/login.php', {
+    fetch('../../backend/api/login1.php', {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(userData),
     })
     .then(response=>response.json())

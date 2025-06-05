@@ -5,7 +5,7 @@ window.onload = function() {
             const nameElement = document.getElementById('name');
             nameElement.innerText = data.value[0]['FirstName'];
             const imgElem = document.getElementById('profile-pic');
-            imgElem.setAttribute('src', `../../files/uploaded/${data.value[0]['UserImage']}`);
+            imgElem.setAttribute('src', `https://alumni-club-files-13.s3.eu-north-1.amazonaws.com/uploads/${data.value[0]['UserImage']}`);
             const userInfoElement = document.getElementById('user-info');
             const userType = data.value[0]['UserType'];
             if(userType.localeCompare('recruiter') == 0){
@@ -47,6 +47,8 @@ eventForm.addEventListener('submit', (event) => {
     inputs.forEach(input => {
         eventData[input.id] = input.value;
     });
+
+    eventData['image'] = eventData['image'].split("\\").pop();
 
     fetch('../../backend/api/add_event.php', {
         method: 'POST',

@@ -24,8 +24,8 @@ require_once "../models/Event.php";
     }
     else {
 
-        $name = $phpInput['name'];
-        $description = $phpInput['description'];
+        $name = rtrim($phpInput['name']);
+        $description = rtrim($phpInput['description']);
         $date = $phpInput['date'];
         $image = basename($phpInput['image']);
 

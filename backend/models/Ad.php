@@ -12,7 +12,7 @@
             $this->description = $description;
         }
         public function fetchUserId (PDO $conn, $email) {
-            $sql = "SELECT UserId FROM Users WHERE emailaddress = ?";
+            $sql = "SELECT UserId FROM users WHERE emailaddress = ?";
             $stmt = $conn->prepare($sql);
             $stmt->execute([$email]);
     

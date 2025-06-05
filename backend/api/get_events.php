@@ -3,7 +3,7 @@ require_once('../db/db.php');
     session_start();
 
     function fetchUserId (PDO $conn, $email) {
-        $sql = "SELECT UserId, UserType FROM Users WHERE emailaddress = ?";
+        $sql = "SELECT UserId, UserType FROM users WHERE emailaddress = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email]);
 
@@ -24,7 +24,7 @@ require_once('../db/db.php');
         FROM eventinfo 
         JOIN usertoevent ON eventinfo.EventId=usertoevent.EventId
         JOIN graduate ON graduate.GraduateId=usertoevent.UserId 
-        JOIN major ON Major.MajorId=graduate.MajorId 
+        JOIN major ON major.MajorId=graduate.MajorId 
         WHERE (major.MajorName=:major OR graduate.Class=:class) 
         AND NOT EXISTS (
                     SELECT 1

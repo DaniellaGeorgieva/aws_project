@@ -24,7 +24,7 @@ class User {
 
     public function checkLogin(): void {
         
-        require_once "../db/DB.php";
+        require_once "../db/db.php";
 
 		try{
 			$db = new DB();
@@ -91,7 +91,7 @@ class User {
         }
     }
     public function updatePass($newp, $oldp): void {
-        require_once "../db/DB.php";
+        require_once "../db/db.php";
 
 		try{
 			$db = new DB();
@@ -151,7 +151,7 @@ class Graduate extends User {
     }
 
     public function fetchUserId (PDO $conn) {
-        $sql = "SELECT UserId FROM Users WHERE emailaddress = ?";
+        $sql = "SELECT UserId FROM users WHERE emailaddress = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$this->email]);
 
@@ -159,7 +159,7 @@ class Graduate extends User {
     }
 
     public function fetchMajorId(PDO $conn) {
-        $sql = "SELECT MajorId FROM Major WHERE MajorName = ?";
+        $sql = "SELECT MajorId FROM major WHERE MajorName = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$this->major]);
 
@@ -167,7 +167,7 @@ class Graduate extends User {
     }
 
     public function storeInDB(): void {
-        require_once "../db/DB.php";
+        require_once "../db/db.php";
 
         try{
             $db = new DB();
@@ -191,7 +191,7 @@ class Graduate extends User {
             $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
 
             $insertGraduate = $conn->prepare(
-                "INSERT INTO `Graduate` (GraduateId, fn, major, class, status, location, majorId)
+                "INSERT INTO `graduate` (GraduateId, fn, major, class, status, location, majorId)
                 VALUES (:GraduateId, :fn, :major, :class, :status, :location, :MajorId)");
 
             $insertResultMain = $insertMainUser->execute([
@@ -245,14 +245,14 @@ class Graduate extends User {
     }
 
     public function fetchUserIdByEmail (PDO $conn, $email) {
-        $sql = "SELECT UserId FROM Users WHERE emailaddress = ?";
+        $sql = "SELECT UserId FROM users WHERE emailaddress = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email]);
     
         return $stmt->fetch(PDO::FETCH_ASSOC)["UserId"];
     }
     public function updateInDB($email): void {
-        require_once "../db/DB.php";
+        require_once "../db/db.php";
 
         try{
             $db = new DB();
@@ -276,7 +276,7 @@ class Graduate extends User {
                 
 
             $updateGraduate = $conn->prepare(
-                "UPDATE `Graduate` SET fn = :fn, major = :major, class = :class, status = :status, location = :location, MajorId = :MajorId
+                "UPDATE `graduate` SET fn = :fn, major = :major, class = :class, status = :status, location = :location, MajorId = :MajorId
                 WHERE GraduateId = :id");
 
             $updateResultMain = $updateMainUser->execute([
@@ -365,14 +365,14 @@ class Recruiter extends User {
     }
 
     public function fetchUserId (PDO $conn) {
-        $sql = "SELECT UserId FROM Users WHERE emailaddress = ?";
+        $sql = "SELECT UserId FROM users WHERE emailaddress = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$this->email]);
 
         return $stmt->fetch(PDO::FETCH_ASSOC)["UserId"];
     }
     function fetchUserIdByEmail (PDO $conn, $email) {
-        $sql = "SELECT UserId FROM Users WHERE emailaddress = ?";
+        $sql = "SELECT UserId FROM users WHERE emailaddress = ?";
         $stmt = $conn->prepare($sql);
         $stmt->execute([$email]);
     
@@ -380,7 +380,7 @@ class Recruiter extends User {
     }
 
     public function storeInDB(): void {
-        require_once "../db/DB.php";
+        require_once "../db/db.php";
         
         try{
             $db = new DB();
@@ -425,7 +425,7 @@ class Recruiter extends User {
             $userId = $this->fetchUserId($conn);
 
             $insertRecruiter = $conn->prepare(
-                "INSERT INTO `Recruiter` (RecruiterId, companyName)
+                "INSERT INTO `recruiter` (RecruiterId, companyName)
                 VALUES (:RecruiterId, :companyName)");
         
             $insertResult = $insertRecruiter->execute([
@@ -448,7 +448,7 @@ class Recruiter extends User {
     }
 
     public function updateInDB($email): void {
-        require_once "../db/DB.php";
+        require_once "../db/db.php";
 
         try{
             $db = new DB();
@@ -477,7 +477,7 @@ class Recruiter extends User {
             ]);
 
             $updateRecruiter = $conn->prepare(
-                "UPDATE `Recruiter` SET companyName = :companyName WHERE RecruiterId = :id");
+                "UPDATE `recruiter` SET companyName = :companyName WHERE RecruiterId = :id");
         
             $updateResultRec = $updateRecruiter->execute([
                 'id' => $UserId,

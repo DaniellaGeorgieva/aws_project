@@ -5,7 +5,7 @@ session_start();
 $phpInput = json_decode(file_get_contents('php://input'), true);
 
 function fetchUserId (PDO $conn, $email) {
-    $sql = "SELECT UserId FROM Users WHERE emailaddress = ?";
+    $sql = "SELECT UserId FROM users WHERE emailaddress = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$email]);
 
